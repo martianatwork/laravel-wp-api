@@ -1,12 +1,12 @@
 {
-    "name": "swancreative/laravel-wp-api",
+    "name": "martianatwork/laravel-wp-api",
     "description": "Laravel package for the Wordpress JSON REST API forked from threesquared",
     "keywords": ["laravel", "package", "wordpress", "API", "REST"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Ben Speakman/Matt Wilding",
-            "email": "support@swancreative.com"
+            "name": "Nick",
+            "email": "noreply@noone.com"
         }
     ],
     "require": {
