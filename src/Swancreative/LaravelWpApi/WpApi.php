@@ -46,7 +46,8 @@ class WpApi
      */
     public function posts($page = null)
     {
-        return $this->get('posts', ['page' => $page]);
+        $pages = $page ? ['page' => trim($page)] : null;
+        return $this->get('posts', [$pages]);
     }
     /**
      * Get all sticky posts
@@ -56,7 +57,8 @@ class WpApi
      */
     public function stickies($page = null)
     {
-        return $this->get('posts', ['sticky' => true, 'page' => $page]);
+        $pages = $page ? ['page' => trim($page)] : null;
+        return $this->get('posts', ['sticky' => true, $pages]);
     }
     
     /**
@@ -67,7 +69,8 @@ class WpApi
      */
     public function pages($page = null)
     {
-        return $this->get('pages', ['page' => $page]);
+        $pages = $page ? ['page' => trim($page)] : null;
+        return $this->get('pages', [$pages]);
     }
 
     /**
@@ -135,7 +138,10 @@ class WpApi
      */
     public function categoryPosts($cat = null, $page = null, $pp = null)
     {
-        return $this->get('posts', ['categories' => trim($cat),'page' => $page, 'per_page' => $pp]);
+        $category = $cat ? ['categories' => trim($cat)] : null;
+        $pages = $page ? ['page' => trim($page)] : null;
+        $pps = $pp ? ['per_page' => trim($pp)] : null;
+        return $this->get('posts', [$category, $pages, $pps]);
     }
 
     /**
@@ -147,7 +153,8 @@ class WpApi
      */
     public function authorPosts($name, $page = null)
     {
-        return $this->get('posts', ['page' => $page, 'filter' => ['author_name' => $name]]);
+        $pages = $page ? ['page' => trim($page)] : null;
+        return $this->get('posts', [$pages, 'filter' => ['author_name' => $name]]);
     }
 
     /**
@@ -158,7 +165,8 @@ class WpApi
      */
     public function latestPost($cat = null)
     {
-        return $this->get('posts', ['categories' => trim($cat),'per_page' => 1,'status' => 'publish']);
+        $category = $cat ? ['categories' => trim($cat)] : null;
+        return $this->get('posts', [ $category, 'per_page' => 1,'status' => 'publish']);
     }
     
     /**
