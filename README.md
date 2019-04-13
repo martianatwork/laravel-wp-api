@@ -8,7 +8,7 @@ Laravel 5 package for the [Wordpress JSON REST API](https://github.com/WP-API/WP
 
 Simply add the following line to your `composer.json` and run install/update:
 
-    "mattwilding/laravel-wp-api": "~2.0"
+    "martianatwork/laravel-wp-api": "~2.0"
 
 ## Configuration
 
@@ -32,6 +32,10 @@ And publish the package config files to configure the location of your Wordpress
 
 The package provides a simplified interface to some of the existing api methods documented [here](http://wp-api.org/).
 You can either use the Facade provided or inject the `Mattwilding\LaravelWpApi\WpApi` class.
+
+### Auth
+
+Use https://wordpress.org/plugins/application-passwords/ with a non admin user
 
 #### Posts
 ```php
